@@ -9,6 +9,7 @@ public class AxiomPower : AxiomBase
     public LayerMask groundLayer;
     public float movmentForce = 100;
     Vector3 lastPos;
+    public string type = "Big";
 
     public override void OnDragUpdate(Vector3 mouseWorld)
     {
