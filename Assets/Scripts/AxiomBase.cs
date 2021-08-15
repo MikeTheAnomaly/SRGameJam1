@@ -37,4 +37,10 @@ public class AxiomBase: Selectable
     {
         base.OnDragUpdate( mouseWorld);
     }
+
+    public override void OnDeHover(Vector3 mouseWorld)
+    {
+        base.OnDeHover(mouseWorld);
+        sprite.color = startColor;
+    }
 }

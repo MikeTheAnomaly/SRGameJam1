@@ -582,6 +582,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 388548369, guid: 6ce32d5cbacd084408dfbc349945318c, type: 3}
+      propertyPath: movmentForce
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 4689092061225985325, guid: 6ce32d5cbacd084408dfbc349945318c, type: 3}
       propertyPath: m_Name
       value: MarballBig
