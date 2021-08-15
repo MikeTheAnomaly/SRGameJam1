@@ -5,7 +5,6 @@ using UnityEngine;
 public class AxiomBase: Selectable
 {
     public GameObject EffectedObject;
-    public float distance;
     public SpriteRenderer sprite;
     private Color startColor;
 
@@ -22,20 +21,20 @@ public class AxiomBase: Selectable
         startColor = sprite.color;
     }
 
-    public override void OnHover()
+    public override void OnHover(Vector3 mouseWorld)
     {
-        base.OnHover();
+        base.OnHover(mouseWorld);
         sprite.color = new Color(.5f, .5f, 0);
     }
 
-    public override void OnSelected()
+    public override void OnSelected(Vector3 mouseWorld)
     {
-        base.OnSelected();
+        base.OnSelected(mouseWorld);
         sprite.color = new Color(0, 1, 0);
     }
 
-    public override void OnSelectedUpdate()
+    public override void OnDragUpdate(Vector3 mouseWorld)
     {
-        base.OnSelectedUpdate();
+        base.OnDragUpdate( mouseWorld);
     }
 }

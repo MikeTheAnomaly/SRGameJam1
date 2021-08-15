@@ -1,26 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class AxiomPower : MonoBehaviour
+public class AxiomPower : AxiomBase
 {
     public float distance;
     public LayerMask groundLayer;
 
-    // Update is called once per frame
-    void Update()
+    public override void OnDragUpdate(Vector3 mouseWorld)
     {
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        RaycastHit2D hitData = Physics2D.Raycast(new Vector2(worldPosition.x, worldPosition.y), Vector2.zero, 0);
+        base.OnDragUpdate(mouseWorld);
+
+        if (IsGrounded())
         {
-            if (hitData && Input.GetMouseButtonDown(0))
-            {
-                GameObject selectedObject = hitData.transform.gameObject;
-            }
+            EffectedObject.transform.position = new Vector3(Pointer.current.position.x.ReadValue(), EffectedObject.transform.position.y, EffectedObject.transform.position.z);
         }
     }
-
-
 
     bool IsGrounded()
     {
