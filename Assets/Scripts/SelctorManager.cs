@@ -19,7 +19,7 @@ public class SelctorManager : MonoBehaviour
             if (hitData.transform != null)
             {
                 GameObject selectedObject = hitData.transform.gameObject;
-                Selectable sel = selectedObject.GetComponent<Selectable>();
+                Selectable sel = selectedObject.GetComponentInChildren<Selectable>();
                 if (sel != null)
                 {
                     if(lastClick != sel && lastClick != null)
