@@ -16,10 +16,9 @@ public class AxiomPower : AxiomBase
 
         if (IsGrounded())
         {
-            //EffectedObject.transform.position = new Vector3(mouseWorld.x, EffectedObject.transform.position.y, EffectedObject.transform.position.z);
+            
             lastPos = EffectedObject.transform.position;
             EffectedObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-(transform.position.x - mouseWorld.x) * movmentForce, EffectedObject.GetComponent<Rigidbody2D>().velocity.y);
-            //EffectedObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-(transform.position.x - mouseWorld.x) * movmentForce, 0));
         }
     }
 
@@ -40,9 +39,6 @@ public class AxiomPower : AxiomBase
     public override void DeSelected(Vector3 mouseWorld)
     {
         base.DeSelected(mouseWorld);
-        Debug.LogError("wow");
 
-        //EffectedObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((transform.position.x - mouseWorld.x) * movmentForce, 0));
-        //EffectedObject.GetComponent<Rigidbody2D>().velocity = new Vector2((transform.position.x - mouseWorld.x) * movmentForce, EffectedObject.GetComponent<Rigidbody2D>().velocity.);
     }
 }
